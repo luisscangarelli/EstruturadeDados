@@ -2,9 +2,6 @@ package service;
 
 import java.util.*;
 
-/**
- * Tarefa 6: Registro de Vendas por Sabor usando HashMap
- */
 public class VendasService {
     private Map<String, Integer> vendasPorSabor;
 
@@ -29,7 +26,7 @@ public class VendasService {
     }
 
     public void exibirRanking() {
-        System.out.println("\n=== RANKING DE SABORES MAIS VENDIDOS ===");
+        System.out.println("\n=== MAIS VENDIDOS ===");
         
         if (vendasPorSabor.isEmpty()) {
             System.out.println("Nenhuma venda registrada.");
@@ -43,11 +40,9 @@ public class VendasService {
         Collections.sort(ranking, new Comparator<Map.Entry<String, Integer>>() {
             @Override
             public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
-                return e2.getValue().compareTo(e1.getValue()); // Ordem decrescente
+                return e2.getValue().compareTo(e1.getValue()); 
             }
         });
-
-        // Exibe o ranking
         int posicao = 1;
         for (Map.Entry<String, Integer> entry : ranking) {
             System.out.printf("%d. %s - %d vendas\n", posicao++, entry.getKey(), entry.getValue());
@@ -57,7 +52,7 @@ public class VendasService {
     }
 
     public void listarTodosSaboresVendidos() {
-        System.out.println("\n=== TODOS OS SABORES VENDIDOS ===");
+        System.out.println("\n=== SABORES VENDIDOS ===");
         if (vendasPorSabor.isEmpty()) {
             System.out.println("Nenhuma venda registrada.");
         } else {
