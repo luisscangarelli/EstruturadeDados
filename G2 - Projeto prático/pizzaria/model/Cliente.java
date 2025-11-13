@@ -12,8 +12,6 @@ public class Cliente {
         this.endereco = endereco;
         this.vip = vip;
     }
-
-    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -45,8 +43,6 @@ public class Cliente {
     public void setVip(boolean vip) {
         this.vip = vip;
     }
-
-    @Override
     public String toString() {
         return String.format("%s - %s - %s%s", nome, telefone, endereco, (vip ? " [VIP]" : ""));
     }
