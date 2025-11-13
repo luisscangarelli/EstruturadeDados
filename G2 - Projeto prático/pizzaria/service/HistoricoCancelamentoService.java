@@ -3,9 +3,6 @@ package service;
 import model.Pedido;
 import java.util.Stack;
 
-/**
- * Tarefa 5: Histórico de Pedidos Cancelados usando Stack
- */
 public class HistoricoCancelamentoService {
     private Stack<Pedido> historicoCancelamentos;
 
@@ -15,7 +12,7 @@ public class HistoricoCancelamentoService {
 
     public void cancelarPedido(Pedido pedido) {
         historicoCancelamentos.push(pedido);
-        System.out.println("✓ Pedido #" + pedido.getNumero() + " cancelado e adicionado ao histórico!");
+        System.out.println("✓ Pedido #" + pedido.getNumero() + " cancelado e adicionado");
     }
 
     public Pedido recuperarUltimoCancelamento() {
@@ -24,7 +21,7 @@ public class HistoricoCancelamentoService {
             System.out.println("✓ Último cancelamento recuperado: Pedido #" + pedido.getNumero());
             return pedido;
         } else {
-            System.out.println("✗ Nenhum cancelamento no histórico!");
+            System.out.println("✗ Nenhum cancelamento");
             return null;
         }
     }
