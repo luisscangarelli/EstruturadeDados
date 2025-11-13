@@ -3,9 +3,6 @@ package service;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Tarefa 1: Cadastro de Sabores usando HashSet
- */
 public class SaborService {
     private Set<String> sabores;
 
@@ -28,7 +25,7 @@ public class SaborService {
     public boolean adicionarSabor(String sabor) {
         boolean adicionado = sabores.add(sabor);
         if (adicionado) {
-            System.out.println("✓ Sabor '" + sabor + "' adicionado com sucesso!");
+            System.out.println("✓ Sabor '" + sabor + "' adicionado");
         } else {
             System.out.println("✗ Sabor '" + sabor + "' já existe no cardápio.");
         }
@@ -38,7 +35,7 @@ public class SaborService {
     public boolean removerSabor(String sabor) {
         boolean removido = sabores.remove(sabor);
         if (removido) {
-            System.out.println("✓ Sabor '" + sabor + "' removido com sucesso!");
+            System.out.println("✓ Sabor '" + sabor + "' removido");
         } else {
             System.out.println("✗ Sabor '" + sabor + "' não encontrado.");
         }
@@ -63,6 +60,6 @@ public class SaborService {
     }
 
     public Set<String> getSabores() {
-        return new HashSet<>(sabores); // Retorna cópia para proteção
+        return new HashSet<>(sabores);
     }
 }
