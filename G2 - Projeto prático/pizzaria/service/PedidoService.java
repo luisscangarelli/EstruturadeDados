@@ -6,9 +6,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Tarefa 2: Registro de Pedidos usando ArrayList
- */
 public class PedidoService {
     private List<Pedido> pedidosAbertos;
     private int proximoNumero;
@@ -21,7 +18,7 @@ public class PedidoService {
     public Pedido adicionarPedido(String cliente, String sabor, char tamanho, double valor, int tempoPreparo, boolean vip) {
         Pedido pedido = new Pedido(proximoNumero++, cliente, sabor, tamanho, valor, tempoPreparo, vip);
         pedidosAbertos.add(pedido);
-        System.out.println("✓ Pedido #" + pedido.getNumero() + " adicionado com sucesso!");
+        System.out.println("✓ Pedido #" + pedido.getNumero() + " adicionado");
         return pedido;
     }
 
@@ -63,7 +60,7 @@ public class PedidoService {
                 return p1.getCliente().compareToIgnoreCase(p2.getCliente());
             }
         });
-        System.out.println("✓ Pedidos ordenados por nome do cliente!");
+        System.out.println("Pedidos ordenados por nome do cliente!");
     }
 
     public boolean removerPedido(int numero) {
