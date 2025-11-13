@@ -4,9 +4,6 @@ import model.Pedido;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Tarefa 3: Fila de Entregas usando Queue (LinkedList)
- */
 public class FilaEntregaService {
     private Queue<Pedido> filaEntregas;
 
@@ -16,7 +13,7 @@ public class FilaEntregaService {
 
     public void adicionarNaFila(Pedido pedido) {
         filaEntregas.offer(pedido);
-        System.out.println("✓ Pedido #" + pedido.getNumero() + " adicionado à fila de entregas!");
+        System.out.println("✓ Pedido #" + pedido.getNumero() + " adicionado");
     }
 
     public Pedido entregarProximo() {
