@@ -18,8 +18,6 @@ public class Pedido {
         this.tempoPreparo = tempoPreparo;
         this.vip = vip;
     }
-
-    // Getters e Setters
     public int getNumero() {
         return numero;
     }
