@@ -4,30 +4,21 @@ import model.Pedido;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/**
- * Tarefa 4: Pedidos Prioritários usando PriorityQueue
- * Prioridade: menor tempo de preparo primeiro
- */
 public class PedidoPrioritarioService {
     private PriorityQueue<Pedido> filaPrioritaria;
 
     public PedidoPrioritarioService() {
-        // Comparator: pedidos com menor tempo de preparo têm prioridade
         this.filaPrioritaria = new PriorityQueue<>(new Comparator<Pedido>() {
-            @Override
             public int compare(Pedido p1, Pedido p2) {
-                // Primeiro compara se é VIP (VIP tem prioridade)
                 if (p1.isVip() && !p2.isVip()) {
                     return -1;
                 } else if (!p1.isVip() && p2.isVip()) {
                     return 1;
                 }
-                // Se ambos VIP ou ambos não-VIP, compara por tempo
                 return Integer.compare(p1.getTempoPreparo(), p2.getTempoPreparo());
             }
         });
     }
-
     public void adicionarPedidoPrioritario(Pedido pedido) {
         filaPrioritaria.offer(pedido);
         System.out.println("✓ Pedido #" + pedido.getNumero() + " adicionado à fila prioritária!");
